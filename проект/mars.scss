@@ -1,0 +1,138 @@
+// Переменные
+$main-bg-color: #2C292E;
+$accent-color: #8C26D0;
+$accent-hover-color: #6C1DA0;
+$dark-bg-color: #1C1A1D;
+$text-color: #ffffff;
+$font-path: 'Ubuntu/';
+
+// Импорт модуля color
+@use "sass:color";
+
+// Шрифт
+@font-face {
+  font-family: 'Font';
+  src: url('#{$font-path}Ubuntu-Medium.ttf') format('truetype'),
+       url('#{$font-path}Ubuntu-Regular.ttf') format('truetype'),
+       url('#{$font-path}Ubuntu-Light.ttf') format('truetype'),
+       url('#{$font-path}Ubuntu-Bold.ttf') format('truetype');
+}
+
+// Основные стили
+body {
+  background-color: $main-bg-color !important;
+  font-family: 'Font', sans-serif !important;
+}
+
+// Меню
+.menu {
+  background: url("менюю.svg");
+  width: 80%;
+  height: 5%;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  align-items: center;
+  color: $text-color;
+  font-size: 120%;
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+    font-size: 130%;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+// Контент
+.content {
+  width: 80%;
+  height: 100%;
+  background: url("Group 8.svg");
+  margin: auto;
+  text-align: center;
+  padding: 1% 1%;
+  color: $text-color;
+  display: flex;
+}
+
+// Фиолетовая кнопка
+.btn-фиолетовый {
+  background-color: $accent-color !important;
+  border: 0;
+  color: $text-color !important;
+
+  &:hover {
+    background-color: $accent-hover-color;
+    color: #C6C6C6;
+  }
+}
+
+// Блок "hark"
+.hark {
+  margin: 10% 13% 15% 0; //Сокращенная запись margin
+
+  h2 {
+    margin-bottom: 10%;
+  }
+
+  p {
+    font-size: 110%;
+  }
+}
+
+// Фильмы
+.films {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.film {
+  margin: 3%;
+
+  p {
+    font-size: 120%;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+// Постер
+img#poster {
+  height: 500px;
+  margin: 2% 10% 2% 0; //Сокращенная запись margin
+}
+
+
+.cart img {
+  margin: 0 15%;
+  cursor: pointer;
+}
+
+// Футер
+.footer {
+  height: 5%;
+  width: 80%;
+  background-color: $dark-bg-color;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: $text-color;
+
+  .icon {
+    margin: 1% 1% 0 1%;
+    display: flex;
+  }
+
+  p {
+    margin-left: 1%;
+  }
+}
