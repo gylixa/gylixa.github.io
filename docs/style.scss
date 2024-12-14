@@ -1,0 +1,127 @@
+// Переменные
+$main-bg-color: #2C292E;
+$accent-color: #8C26D0;
+$dark-bg-color: #1C1A1D;
+$text-color: #ffffff;
+$font-path: 'Ubuntu/';
+
+// Импорт модуля color
+@use "sass:color";
+
+// Шрифт
+@font-face {
+  font-family: 'Font';
+  src: url('#{$font-path}Ubuntu-Medium.ttf') format('truetype'),
+       url('#{$font-path}Ubuntu-Regular.ttf') format('truetype'),
+       url('#{$font-path}Ubuntu-Light.ttf') format('truetype'),
+       url('#{$font-path}Ubuntu-Bold.ttf') format('truetype');
+}
+
+// Основные стили
+body {
+  background-color: $main-bg-color;
+  font-family: 'Font', sans-serif !important;
+}
+
+// Меню
+.menu {
+  background: url("менюю.svg");
+  width: 80%;
+  height: 5%;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  align-items: center;
+  color: $text-color;
+  font-size: 120%;
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+    font-size: 130%;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+// Контент
+.content {
+  width: 80%;
+  height: 100%;
+  background: url("Group 8.svg");
+  margin: auto;
+  text-align: center;
+  padding: 1% 1%;
+  color: $text-color;
+}
+
+// Фильмы
+.films {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.film {
+  margin: 3%;
+
+  p {
+    font-size: 120%;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+// Постер
+img#poster {
+  height: 300px;
+  font-weight: bold;
+}
+
+// Корзина
+.cart img {
+  margin: 0 15%;
+  cursor: pointer;
+}
+
+// Футер
+.footer {
+  height: 5%;
+  width: 80%;
+  background-color: $dark-bg-color;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: $text-color;
+
+  .icon {
+    margin: 1% 1% 0 1%;
+    display: flex;
+  }
+
+  p {
+    margin-left: 1%;
+  }
+}
+
+// Кнопка
+button {
+  margin: 5%;
+  background-color: $accent-color;
+  border: 0;
+  color: $text-color;
+  font-size: 180%;
+  border-radius: 15px;
+  padding: 0.5%;
+
+  &:hover {
+    background-color: color.adjust($accent-color, $lightness: -10%);
+    color: #C6C6C6;
+  }
+}
